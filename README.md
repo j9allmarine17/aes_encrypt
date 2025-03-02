@@ -1,17 +1,21 @@
 AES-256-CBC File Encryption and Decryption in Rust
 
 This Rust application provides a secure way to encrypt and decrypt files using the AES-256-CBC encryption algorithm. It leverages PBKDF2 for key derivation from a passphrase and employs a zero-initialized initialization vector (IV) for both encryption and decryption operations.
+
+This project was inspired by and builds upon concepts from the video ["Getting Started with Rust - Bypass Windows Defender"](https://www.youtube.com/watch?v=o8af1KeMrRc&list=PLRlFYFaJSu7J5e0Jxz2kyzOWeRi4NJyHD&t=95s) by [Gemini Cyber Security](https://www.youtube.com/@GeminiCyberSecurity). Credit goes to them for providing an excellent introduction to Rust programming that helped shape this tool.
+
 Features
 
-    AES-256-CBC Encryption: Implements the industry-standard AES-256 algorithm in Cipher Block Chaining (CBC) mode.
-    PBKDF2 Key Derivation: Derives a secure encryption key from a user-provided passphrase.
-    File Encryption and Decryption: Supports encrypting and decrypting files of arbitrary size.
-    Key Storage: Automatically stores the derived encryption key in a key.txt file for later use.
+- **AES-256-CBC Encryption**: Implements the industry-standard AES-256 algorithm in Cipher Block Chaining (CBC) mode.
+- **PBKDF2 Key Derivation**: Derives a secure encryption key from a user-provided passphrase.
+- **File Encryption and Decryption**: Supports encrypting and decrypting files of arbitrary size.
+- **Key Storage**: Automatically stores the derived encryption key in a `key.txt` file for later use.
 
 Prerequisites
 
 To use this application, ensure that Rust is installed on your system. If you don’t have Rust installed, you can install it via Rustup with the following command:
-bash
+
+```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 Follow the on-screen instructions to complete the installation.
@@ -72,6 +76,9 @@ Security Considerations
     Key Storage: The encryption key is stored in plain text in key.txt. Ensure this file is stored securely and excluded from version control (e.g., via .gitignore).
     Passphrase: The application currently uses a hardcoded passphrase. For real-world applications, replace this with a secure user input mechanism.
 
+Credits
+
+Special thanks to Gemini Cyber Security for their insightful video "Getting Started with Rust - Bypass Windows Defender", which provided foundational knowledge and inspiration for this project.
 License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
