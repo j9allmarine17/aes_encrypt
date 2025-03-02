@@ -2,7 +2,7 @@
 
 This Rust application provides a secure way to encrypt and decrypt files using the AES-256-CBC encryption algorithm. It leverages PBKDF2 for key derivation from a passphrase and employs a zero-initialized initialization vector (IV) for both encryption and decryption operations.
 
-This project was inspired by and builds upon concepts from the video *"Getting Started with Rust - Bypass Windows Defender"* by **Gemini Cyber Security**. Credit goes to them for providing an excellent introduction to Rust programming that helped shape this tool.
+This project was inspired by and builds upon concepts from the video *["Getting Started with Rust - Bypass Windows Defender"](https://www.youtube.com/watch?v=o8af1KeMrRc&list=PLRlFYFaJSu7J5e0Jxz2kyzOWeRi4NJyHD&index=85)* by **[Gemini Cyber Security](https://www.youtube.com/@gemini_security)**. Credit goes to them for providing an excellent introduction to Rust programming that helped shape this tool.
 
 ## Features
 - **AES-256-CBC Encryption**: Implements the industry-standard AES-256 algorithm in Cipher Block Chaining (CBC) mode.
