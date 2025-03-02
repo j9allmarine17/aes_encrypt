@@ -4,6 +4,8 @@ This Rust application provides a secure way to encrypt and decrypt files using t
 
 This project was inspired by and builds upon concepts from the video *["Getting Started with Rust - Bypass Windows Defender"](https://www.youtube.com/watch?v=o8af1KeMrRc&list=PLRlFYFaJSu7J5e0Jxz2kyzOWeRi4NJyHD&index=85)* by **[Gemini Cyber Security](https://www.youtube.com/@gemini_security)**. However, if Windows Defender flagged their tool's signature, the code was modified to ensure it does not share the same signature while maintaining its core functionality. **[Gemini Cyber Security](https://www.youtube.com/@gemini_security)**. Credit goes to them for providing an excellent introduction to Rust programming that helped shape this tool.
 
+> **Note:** This tool is intended for educational and security research purposes only. Use responsibly and in compliance with applicable laws.
+
 ## Features
 - **AES-256-CBC Encryption**: Implements the industry-standard AES-256 algorithm in Cipher Block Chaining (CBC) mode.
 - **PBKDF2 Key Derivation**: Derives a secure encryption key from a user-provided passphrase.
@@ -96,3 +98,5 @@ Special thanks to **Gemini Cyber Security** for their insightful video *"Getting
 ## License
 This project is licensed under the **MIT License**. See the `LICENSE` file for details.
 
+## Disclaimer
+This tool is for educational and research purposes only. The author is not responsible for any misuse or damage caused by this software. Use it at your own risk and ensure compliance with all relevant laws and regulations.
