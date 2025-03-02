@@ -1,34 +1,31 @@
 AES-256-CBC File Encryption and Decryption in Rust
 
-This Rust program encrypts and decrypts files using the AES-256-CBC encryption scheme. It derives an encryption key from a passphrase using PBKDF2 and uses a zero-initialized IV for encryption and decryption.
-
+This Rust application provides a secure way to encrypt and decrypt files using the AES-256-CBC encryption algorithm. It leverages PBKDF2 for key derivation from a passphrase and employs a zero-initialized initialization vector (IV) for both encryption and decryption operations.
 Features
 
-AES-256-CBC encryption
-
-PBKDF2 key derivation
-
-File encryption and decryption
-
-Automatic key storage in key.txt
+    AES-256-CBC Encryption: Implements the industry-standard AES-256 algorithm in Cipher Block Chaining (CBC) mode.
+    PBKDF2 Key Derivation: Derives a secure encryption key from a user-provided passphrase.
+    File Encryption and Decryption: Supports encrypting and decrypting files of arbitrary size.
+    Key Storage: Automatically stores the derived encryption key in a key.txt file for later use.
 
 Prerequisites
 
-Ensure you have Rust installed on your system. If Rust is not installed, you can install it using Rustup:
-
+To use this application, ensure that Rust is installed on your system. If you don’t have Rust installed, you can install it via Rustup with the following command:
+bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+Follow the on-screen instructions to complete the installation.
 Building the Project
+1. Clone the Repository
 
-Clone this repository and navigate into the project directory:
-
+Clone this repository and navigate to the project directory:
+bash
 git clone <repository_url>
 cd <repository_name>
+2. Install Dependencies
 
-Install Dependencies
-
-Ensure you have the required Rust dependencies by adding them to Cargo.toml:
-
+The project relies on several Rust crates. Ensure your Cargo.toml includes the following dependencies:
+toml
 [dependencies]
 aes = "0.8"
 block-modes = "0.8"
@@ -37,43 +34,44 @@ sha2 = "0.10"
 hex = "0.4"
 hmac = "0.12"
 
-Then, build the project:
-
+Then, build the project in release mode:
+bash
 cargo build --release
 
+The compiled binary will be located in the target/release directory.
 Usage
 
-Run the compiled binary with the following commands:
-
+Run the application using the compiled binary (rust) with the following commands:
 Encrypt a File
 
-./rust -encrypt <input_filename>
-
+To encrypt a file:
+bash
+./target/release/rust -encrypt <input_filename>
 Example:
+bash
+./target/release/rust -encrypt example.txt
 
-./rust -encrypt example.txt
+This generates:
 
-This will generate an encrypted file named example.txt_encrypted and a key.txt file containing the encryption key.
+    An encrypted file named <input_filename>_encrypted (e.g., example.txt_encrypted).
+    A key.txt file containing the derived encryption key.
 
 Decrypt a File
 
-./rust -decrypt <input_filename> <key_filename>
-
+To decrypt a file:
+bash
+./target/release/rust -decrypt <input_filename> <key_filename>
 Example:
+bash
+./target/release/rust -decrypt example.txt_encrypted key.txt
 
-./rust -decrypt example.txt_encrypted key.txt
-
-This will generate a decrypted file named decrypted.bin.
-
+This generates a decrypted file named decrypted.bin.
 Security Considerations
 
-The IV is initialized to zero, which is not recommended for security-sensitive applications. Consider using a random IV for improved security.
-
-The key is stored in key.txt, which should be handled securely.
-
-The passphrase should be replaced with a secure user input mechanism instead of a hardcoded value.
+    Initialization Vector (IV): The IV is currently set to zero, which is not recommended for production use due to security risks. For enhanced security, consider modifying the code to use a cryptographically secure random IV.
+    Key Storage: The encryption key is stored in plain text in key.txt. Ensure this file is stored securely and excluded from version control (e.g., via .gitignore).
+    Passphrase: The application currently uses a hardcoded passphrase. For real-world applications, replace this with a secure user input mechanism.
 
 License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
+This project is licensed under the MIT License. See the LICENSE file for details.
