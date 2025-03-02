@@ -1,0 +1,12 @@
+[package]
+name = "aes_encrypt"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+aes = "0.7"
+block-modes = "0.8"
+pbkdf2 = "0.9"
+sha2 = "0.9"
+hex = "0.4"
+hmac = "0.11"
